@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # ${HOME}/.poetry/bin/poetry install
+          ${HOME}/.poetry/bin/poetry install
 
       - name: Test python project
         run: |
