@@ -10,12 +10,21 @@ jobs:
       - name: Check out the codes
         uses: actions/checkout@v2
 
-      - name: Setup Python
-        uses: actions/setup-python@v3
+      - name: Setup python environment
+        id: setup-python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.9
 
-      - name: Poetry Install
-        uses: knowsuchagency/poetry-install@v2
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
 
+      - name: Install dependencies
+        run: |
+          ${HOME}/.poetry/bin poetry install
+          
       - name: Test python project
         run: |
           poetry run python manage.py test
