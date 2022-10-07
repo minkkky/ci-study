@@ -13,12 +13,8 @@ jobs:
       - name: "🔨 Setup Python"
         uses: actions/setup-python@v3
 
-      - name: "🔨 Setup Poetry"
-        uses: abatilo/actions-poetry@v2.1.4
-
-      - name: "🔨 Setup Poetry Python environment"
-        id: pyenv
-        uses: Steffo99/actions-poetry-deps@0.2.3
+      - name: Poetry Install
+      uses: knowsuchagency/poetry-install@v2
 
       - name: Test python project
         run: |
