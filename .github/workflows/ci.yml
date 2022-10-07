@@ -17,14 +17,15 @@ jobs:
           python-version: 3.9.9
 
       - name: Install Poetry
+          # echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
-          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
+          # ${HOME}/.poetry/bin/poetry install
         run: |
-          ${HOME}/.poetry/bin poetry install
-          
+          poetry install
+
       - name: Test python project
         run: |
           poetry run python manage.py test
