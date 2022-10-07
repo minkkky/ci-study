@@ -7,14 +7,11 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codes
-        uses: actions/checkout@v2
+      - name: "⬇️ Checkout repository"
+        uses: actions/checkout@v3
 
-      - name: Setup python environment
-        id: setup-python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9.9
+      - name: "🔨 Setup Python"
+        uses: actions/setup-python@v3
 
       - name: "🔨 Setup Poetry"
         uses: abatilo/actions-poetry@v2.1.4
@@ -23,6 +20,6 @@ jobs:
         id: pyenv
         uses: Steffo99/actions-poetry-deps@0.2.3
 
-      - name: Test python project
+      - name: "🧪 Run tests"
         run: |
           poetry run python manage.py test
