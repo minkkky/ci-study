@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["sunset"]
 readme = "README.md"
-packages = [{include = "my_ninja"}]
+packages = [{include = "sunset_ninja"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
