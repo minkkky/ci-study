@@ -22,8 +22,8 @@ jobs:
           echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
-        run: |
-          ${HOME}/.poetry/bin poetry install
+        id: pyenv
+        uses: Steffo99/actions-poetry-deps@0.2.3
 
       - name: Test python project
         run: |
