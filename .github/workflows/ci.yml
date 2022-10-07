@@ -16,12 +16,10 @@ jobs:
         with:
           python-version: 3.9.9
 
-      - name: Install Poetry
-        run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
+      - name: "🔨 Setup Poetry"
+        uses: abatilo/actions-poetry@v2.1.4
 
-      - name: Install dependencies
+      - name: "🔨 Setup Poetry Python environment"
         id: pyenv
         uses: Steffo99/actions-poetry-deps@0.2.3
 
