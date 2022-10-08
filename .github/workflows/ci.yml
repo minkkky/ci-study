@@ -7,7 +7,7 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: "⬇️ Checkout repository"
+      - name: "🔎 Checkout repository"
         uses: actions/checkout@v3
 
       - name: "🔨 Setup Python"
@@ -15,17 +15,13 @@ jobs:
         with:
           python-version: 3.9.9
 
-      - name: "🔨 Setup Poetry"
-        # uses: abatilo/actions-poetry@v2.1.4
+      - name: "🔨 Install Poetry"
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: "🔨 Setup Poetry Python environment"
-        # id: pyenv
-        # uses: Steffo99/actions-poetry-deps@0.2.3
+      - name: "🔨 Install dependencies using Poetry"
         run: poetry install --no-interaction
         shell: bash
 
       - name: "🧪 Run tests"
-        run: |
-          poetry run python manage.py test
+        run: poetry run python manage.py test
