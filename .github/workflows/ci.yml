@@ -12,13 +12,19 @@ jobs:
 
       - name: "🔨 Setup Python"
         uses: actions/setup-python@v3
+        with:
+          python-version: 3.9.9
 
       - name: "🔨 Setup Poetry"
-        uses: abatilo/actions-poetry@v2.1.4
+        # uses: abatilo/actions-poetry@v2.1.4
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
 
       - name: "🔨 Setup Poetry Python environment"
-        id: pyenv
-        uses: Steffo99/actions-poetry-deps@0.2.3
+        # id: pyenv
+        # uses: Steffo99/actions-poetry-deps@0.2.3
+        run: poetry install --no-interaction
+        shell: bash
 
       - name: "🧪 Run tests"
         run: |
