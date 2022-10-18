@@ -13,7 +13,6 @@ django-ninja = "^0.19.1"
 black = "^22.8.0"
 mypy = "^0.982"
 django-stubs = "^1.12.0"
-#pytest-django = "^4.5.2"
 isort = "^5.10.1"
 PyMySQL = "^1.0.2"
 types-PyMySQL = "^1.0.19"
@@ -38,7 +37,7 @@ module = "manage"
 ignore_errors = true
 
 [tool.django-stubs]
-django_settings_module = "sunset_ninja.settings"
+django_settings_module = "sparta.settings"
 
 
 [build-system]

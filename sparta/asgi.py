@@ -1,5 +1,5 @@
 """
-ASGI config for sunset_ninja project.
+ASGI config for sparta project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

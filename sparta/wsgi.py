@@ -1,5 +1,5 @@
 """
-WSGI config for sunset_ninja project.
+WSGI config for sparta project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
