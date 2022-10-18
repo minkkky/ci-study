@@ -3,3 +3,5 @@ __pycache__
 
 .vscode/
 .mypy_cache/
+
+sunset_ninja/local_settings.py

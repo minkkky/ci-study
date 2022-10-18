@@ -2,9 +2,9 @@
 name = "my-ninja"
 version = "0.1.0"
 description = ""
-authors = ["sunset"]
+authors = ["minkkky"]
 readme = "README.md"
-packages = [{include = "sunset_ninja"}]
+packages = [{include = "sparta"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
