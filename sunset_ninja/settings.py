@@ -69,16 +69,29 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "sunset_ninja.wsgi.application"
 
+import pymysql
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+pymysql.install_as_MySQLdb()
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "sparta",
+        "USER": "root",
+        "PASSWORD": "12345",
+        "HOST": "127.0.0.1",
+        
+        "PORT": "3306",
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 
 # Password validation
