@@ -16,14 +16,14 @@ jobs:
       - name: "🔎 Checkout repository"
         uses: actions/checkout@v3
 
-      - name: Set timezone to KST
+      - name: "⌚ Set timezone to KST"
         run: |
           sudo rm /etc/localtime
           sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
       # Start Mysql
       # https://ovirium.com/blog/how-to-make-mysql-work-in-your-github-actions/
-      - name: Start Mysql
+      - name: "🗂️ Start Mysql"
         run: |
           sudo systemctl start mysql
           mysql -e "use mysql; FLUSH PRIVILEGES; ALTER USER '${{ env.DB_USER }}'@'localhost' IDENTIFIED BY '${{ env.DB_PASSWORD }}';" -uroot -proot
@@ -38,8 +38,8 @@ jobs:
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: Debugging with tmate
-        uses: mxschmitt/action-tmate@v3.13
+      # - name: Debugging with tmate
+      #   uses: mxschmitt/action-tmate@v3.13
 
       - name: "🔨 Install dependencies using Poetry"
         run: poetry install --no-interaction
