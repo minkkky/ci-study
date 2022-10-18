@@ -4,4 +4,5 @@ __pycache__
 .vscode/
 .mypy_cache/
 
-sunset_ninja/local_settings.py
+sparta/local_settings.py
+.env
